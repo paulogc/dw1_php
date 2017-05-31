@@ -36,11 +36,11 @@ include $_SESSION["root"].'includes/header.php';
 						echo "<td>".$value->getDepartamento()->getNome()."</td>";
 						echo "<td>".$value->getPermissao()->getNivel()."</td>";
 						echo "<td>
-										<a class='glyphicon glyphicon-pencil'
+										<a class='fa fa-pencil-square-o fa-2x actions'
 											href='editarFuncionario?id=".$value->getIdFuncionario()."'/>
 									</td>";
 						echo "<td>
-										<a class='glyphicon glyphicon-trash actions'
+										<a class='fa fa-trash fa-2x actions'
 											href='excluirFuncionario?id=".$value->getIdFuncionario()."'/>
 									</td>";
 					echo "</tr>";

@@ -63,13 +63,13 @@ class FuncionarioDAO {
 					login = :login,
 					senha = :senha,
 					idPermissao = :idPermissao,
-					idDepartamento = :idDepartamento,
+					idDepartamento = :idDepartamento
 					WHERE idFuncionario = :idFuncionario;";
 			
 				$instance = DatabaseConnection::getInstance();
 				$conn = $instance->getConnection();
 				$statement = $conn->prepare($sql);
-				Util::debug($func);
+
 				$statement->bindValue(":idFuncionario", $func->getIdFuncionario());
 				$statement->bindValue(":nome", $func->getNome());
 				$statement->bindValue(":salario", $func->getSalario());
@@ -77,8 +77,9 @@ class FuncionarioDAO {
 				$statement->bindValue(":senha", $func->getSenha());
 				$statement->bindValue(":idPermissao", $func->getPermissao()->getIdPermissao());
 				$statement->bindValue(":idDepartamento", $func->getDepartamento()->getIdDepartamento());
+
 				$result=$statement->execute();
-				Util::debug($result);
+
 				return $result;
 			}
 		} catch (PDOException $e) {

@@ -41,6 +41,7 @@ class ModelFuncionario {
 
         $this->permissao->setIdPermissao($_POST['idPermissao']);
         $this->departamento->setIdDepartamento($_POST['idDepartamento']);
+
         $this->setIdFuncionario($id);
         $this->setNome($_POST["nome"]);
         $this->setSalario($_POST["salario"]);
